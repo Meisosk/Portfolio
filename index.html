@@ -181,20 +181,18 @@
             const userEmail = document.querySelector('.email')
             console.log(userEmail.value)
             console.log("posted")
-                Email.send({
-                    Host : "smtp.elasticemail.com",
-                    Username : "joefinkel12@gmail.com",
-                    Password : "Meisosk1",
-                    To : "meirsoskil@gmail.com",
-                    From : userEmail.value,
-                    Subject : "This is the subject",
-                    Body : "And this is the body"
-                }).then(
-                message => alert(message)
-                );
+            Email.send({
+            SecureToken : "2822b0a4-e4b0-4848-b442-b3b32fce43ea",
+            To : "meirsoskil@gmail.com",
+            From : userEmail.value,
+            Subject : "This is the subject",
+            Body : "And this is the body"
+        }).then(
+        message => alert(message)
+        );
         }
     </script>
 </body>
 </html>
 
-<!-- 346EBB6B238CE33A9D3EDA401396CF9B240E -->
+<!-- 2822b0a4-e4b0-4848-b442-b3b32fce43ea -->
