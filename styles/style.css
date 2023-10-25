@@ -233,3 +233,85 @@ label {
 svg {
   padding-left: 7px;
 }
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+}
+
+.form-container {
+  background-color: #fbf7f5;
+  padding: 20px;
+  border-radius: 18px;
+  width: 25vw;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 10px 10px 15px 2px rgba(0, 0, 0, 0.11);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+
+label {
+  padding: 5px;
+}
+
+input {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.submit-btn {
+  background-color: #6b9de8;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+.submit-btn:hover {
+  background-color: #86afec;
+}
+
+.email-icon {
+  height: 30px;
+  margin-right: 15px;
+}
+
+.email-link-container {
+  display: flex;
+  align-items: center;
+}
+
+.email-link {
+  color: #6b9de8;
+  text-decoration: none;
+}
+
+.text-contact {
+  width: 25%;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  align-items: stretch;
+}
+
+.field {
+  width: 100%;
+}

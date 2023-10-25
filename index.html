@@ -193,7 +193,10 @@
             </div>
           </div>
           <div class="container">
-            <img src="/styles/images/petnook.png" class="image petnook" />
+            <img
+              src="/styles/images/comupter-stock-Recovered.png"
+              class="image petnook"
+            />
             <div class="middle">
               <a
                 target="#"
@@ -203,7 +206,7 @@
             </div>
           </div>
           <div class="container">
-            <img src="/styles/images/meirsMeteor.png" class="image" />
+            <img src="/styles/images/project-1.png" class="image" />
             <div class="middle">
               <a target="#" href="https://meirs-meteorology.netlify.app/"
                 ><button class="text">Meir's Meteorology</button></a
@@ -219,7 +222,7 @@
             </div>
           </div>
           <div class="container">
-            <img src="/styles/images/tictactoe.png" class="image" />
+            <img src="/styles/images/t-t-t.png" class="image" />
             <div class="middle">
               <a target="#" href="https://meisosk.github.io/"
                 ><button class="text">Tic-Tac-Toe</button></a
@@ -228,75 +231,100 @@
           </div>
         </div>
       </section>
-
       <section id="contact">
         <h1><span class="pipe">|</span> Contact me</h1>
-        <!-- <ul class = "contact-list">
-                <li>
-                    <p>
-                        <label>Email: </label>
-                        <span>
-                            <a class = "contact-list-item" href="mailto:umreen.meirsoskil@gmail.com">meirsoskil@gmail.com</a>
-                        </span>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <label>Linkedin: </label>
-                        <span>
-                            <a class = "contact-list-item" href="https://www.linkedin.com/in/meir-soskil-362952287/">Meir Soskil</a>
-                        </span>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <label>Github: </label>
-                        <span>
-                            <a class = "contact-list-item" href="https://github.com/Meisosk">Meisosk</a>
-                        </span>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <label>Phone: </label>
-                        <span>
-                            (443) 695-5839
-                        </span>
-                    </p>
-                </li>
-            </ul> -->
-        <form class="form">
-          <label for="name">Your Name</label>
-          <input type="text" name="name" />
-          <label for="userEmail">Email Address</label>
-          <input type="email" name="userEmail" class="email" /> <br />
-          <label for="message">Your Message</label>
-          <input type="text" name="message" />
-          <input type="submit" value="Submit" />
-        </form>
+        <div class="flex">
+          <div class="text-contact">
+            <h2>
+              Let's Connect! Whether you have a question, a project idea, or job
+              opportunity, I'm always available
+            </h2>
+            <div class="email-link-container">
+              <img class="email-icon" src="/styles/icons/email.png" alt="" />
+              <p>
+                Mail me at:
+                <br />
+                <a class="email-link" href="mailto: meirsoskil@gmail.com"
+                  >meirsoskil@gmail.com</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="form-container">
+            <p>Send me a message!</p>
+            <form id="form">
+              <div class="field">
+                <label for="from_name">Your Name</label>
+                <input
+                  type="text"
+                  placeholder="Enter your name"
+                  name="from_name"
+                  id="from_name"
+                />
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <input
+                  type="text"
+                  placeholder="Enter your message"
+                  name="message"
+                  id="message"
+                />
+              </div>
+              <div class="field">
+                <label for="user_email">Your Email</label>
+                <input
+                  type="text"
+                  placeholder="Enter your email"
+                  name="user_email"
+                  id="user_email"
+                />
+              </div>
+
+              <input
+                type="submit"
+                id="button"
+                class="submit-btn"
+                value="Send Email"
+              />
+            </form>
+          </div>
+        </div>
       </section>
     </div>
-    <script src="/styles/index.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+
+    <script type="text/javascript">
+      emailjs.init("RangQirxz7qDxImwD");
+    </script>
 
     <script>
-      const form = document.querySelector(".form");
+      const btn = document.getElementById("button");
 
-      function sendEmail(e) {
-        e.preventDefault();
-        const userEmail = document.querySelector(".email");
-        console.log(userEmail.value);
-        console.log("posted");
-        Email.send({
-          SecureToken: "e941c5e9-5447-428e-aa6e-7b194f3a5892 ",
-          To: "meirsoskil@gmail.com",
-          From: userEmail.value,
-          Subject: "This is the subject",
-          Body: "And this is the body",
-        }).then((message) => alert(message));
-      }
+      document
+        .getElementById("form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
 
-      form.addEventListener("submit", sendEmail);
+          btn.value = "Sending...";
+
+          const serviceID = "service_00q08nx";
+          const templateID = "template_vxh2bce";
+
+          emailjs.sendForm(serviceID, templateID, this).then(
+            () => {
+              btn.value = "Send Email";
+              alert("Sent!");
+            },
+            (err) => {
+              btn.value = "Send Email";
+              alert(JSON.stringify(err));
+            }
+          );
+        });
     </script>
   </body>
 </html>
