@@ -3,7 +3,7 @@ const sections = document.querySelectorAll("section");
 
 window.onscroll = () => {
   const top = window.scrollY;
-
+  console.log("here");
   // Handle the "Welcome" link separately
   if (top === 0) {
     listItems.forEach((item) => {
