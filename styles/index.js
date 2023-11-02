@@ -3,17 +3,14 @@ const sections = document.querySelectorAll("section");
 
 window.onscroll = () => {
   const top = window.scrollY;
-  console.log("here");
-  // Handle the "Welcome" link separately
   if (top === 0) {
     listItems.forEach((item) => {
       item.classList.remove("active");
     });
-    listItems[0].classList.add("active"); // Assuming "Welcome" is the first item
+    listItems[0].classList.add("active");
     return;
   }
 
-  // Handle other sections
   sections.forEach((sec) => {
     const offset = sec.offsetTop - 150;
     const height = sec.offsetHeight;
@@ -28,3 +25,12 @@ window.onscroll = () => {
     }
   });
 };
+
+window.addEventListener("scroll", function () {
+  var hero = document.getElementById("hero");
+  if (window.scrollY > hero.offsetTop) {
+    hero.classList.add("active");
+  } else {
+    hero.classList.remove("active");
+  }
+});
