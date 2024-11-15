@@ -41,27 +41,27 @@ const ContactSection = () => {
   return (
     <div
       id="contact"
-      className="relative flex flex-col items-center justify-center h-screen bg-[#161513] overflow-hidden text-white"
+      className="relative flex flex-col items-center justify-center min-h-screen bg-[#161513] overflow-hidden text-white"
     >
       <div>
         {/* Background Circles */}
-        <div className="absolute top-0 left-0 w-48 h-48 bg-gradient-to-r from-purple-500 to-pink-500 opacity-30 rounded-full"></div>
-        <div className="absolute bottom-0 right-0 w-48 h-48 bg-gradient-to-r from-purple-500 to-pink-500 opacity-30 rounded-full"></div>
+        <div className="absolute top-0 left-0 w-32 h-32 sm:w-48 sm:h-48 bg-gradient-to-r from-purple-500 to-pink-500 opacity-30 rounded-full"></div>
+        <div className="absolute bottom-0 right-0 w-32 h-32 sm:w-48 sm:h-48 bg-gradient-to-r from-purple-500 to-pink-500 opacity-30 rounded-full"></div>
       </div>
       <div
-        className="flex text-white items-center justify-center rounded-lg backdrop-blur-md bg-gradient-to-b from-[rgba(102,51,204,0.25)] to-[rgba(140,34,206,0.45)] w-5/6"
+        className="flex flex-col sm:flex-row items-center justify-center rounded-lg backdrop-blur-md bg-gradient-to-b from-[rgba(102,51,204,0.25)] to-[rgba(140,34,206,0.45)] w-5/6 sm:w-4/5 p-6 sm:p-8"
         style={{
-          boxShadow: "5px 5x 250px #6e00ff38",
+          boxShadow: "5px 5px 250px #6e00ff38",
         }}
       >
-        {/* Get in touch Section */}
-        <div className="w-1/2 p-8">
-          <h2 className="text-3xl font-bold mb-4">Get in touch</h2>
-          <p className="mb-4 text-2xl">
+        {/* Contact Info Section */}
+        <div className="w-full sm:w-1/2 p-4 sm:p-8">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">Get in touch</h2>
+          <p className="mb-4 text-xl sm:text-2xl">
             I’m very approachable and would love to speak to you. Feel free to
             call or send me an email, I'm always available.
           </p>
-          <div className="mt-12">
+          <div className="mt-6 sm:mt-12 space-y-4">
             <div className="flex items-center">
               <svg
                 className="h-5 w-5 text-white"
@@ -100,9 +100,11 @@ const ContactSection = () => {
           </div>
         </div>
 
-        {/* Send me a message Form */}
-        <div className="w-1/2  p-8">
-          <h2 className="text-2xl font-bold mb-4">Send me a message</h2>
+        {/* Contact Form Section */}
+        <div className="w-full sm:w-1/2 p-4 sm:p-8">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+            Send me a message
+          </h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <input
@@ -110,7 +112,7 @@ const ContactSection = () => {
                 placeholder="Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full p-[8px_0px_8px_16px] bg-[#d582ff30] text-white rounded-md"
+                className="w-full p-4 bg-[#d582ff30] text-white rounded-md"
                 required
               />
             </div>
@@ -120,7 +122,7 @@ const ContactSection = () => {
                 placeholder="Email Address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full  p-[8px_0px_8px_16px] bg-[#d582ff30] text-white rounded-md"
+                className="w-full p-4 bg-[#d582ff30] text-white rounded-md"
                 required
               />
             </div>
@@ -130,7 +132,7 @@ const ContactSection = () => {
                 placeholder="Subject"
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
-                className="w-full p-[8px_0px_8px_16px] bg-[#d582ff30] text-white rounded-md"
+                className="w-full p-4 bg-[#d582ff30] text-white rounded-md"
                 required
               />
             </div>
@@ -139,7 +141,7 @@ const ContactSection = () => {
                 placeholder="Your message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full p-[8px_0px_8px_16px] bg-[#d582ff30] text-white rounded-md h-32"
+                className="w-full p-4 bg-[#d582ff30] text-white rounded-md h-32"
                 required
               />
             </div>

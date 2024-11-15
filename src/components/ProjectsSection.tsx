@@ -56,19 +56,21 @@ function ProjectsSection() {
         id="projects"
         className="relative flex flex-col items-center justify-center h-screen bg-[#161513] overflow-hidden text-white"
       >
-        <div className="absolute top-0 left-20 w-36 h-36  bg-gradient-to-r from-purple-500 to-pink-500 opacity-30 rounded-full"></div>
-        <div className="absolute top-40  right-4 w-40 h-40 bg-gradient-to-r from-purple-500 to-pink-500 opacity-30 rounded-full"></div>
-        <div className="absolute bottom-32 left-80 w-20 h-20  bg-gradient-to-r from-purple-500 to-pink-500 opacity-30 rounded-full"></div>
+        {/* Gradient Circles */}
+        <div className="absolute top-0 left-10 w-20 h-20 sm:left-20 sm:w-36 sm:h-36 bg-gradient-to-r from-purple-500 to-pink-500 opacity-30 rounded-full"></div>
+        <div className="absolute top-24 right-2 w-24 h-24 sm:top-40 sm:right-4 sm:w-40 sm:h-40 bg-gradient-to-r from-purple-500 to-pink-500 opacity-30 rounded-full"></div>
+        <div className="absolute bottom-16 left-40 w-12 h-12 sm:bottom-32 sm:left-80 sm:w-20 sm:h-20 bg-gradient-to-r from-purple-500 to-pink-500 opacity-30 rounded-full"></div>
 
+        {/* Swiper */}
         <Swiper
           effect={"cards"}
           grabCursor={true}
           modules={[EffectCards]}
-          className="mySwiper w-3/5 h-1/2"
+          className="mySwiper w-4/5 sm:w-3/5 h-[60%] sm:h-1/2"
           loop={true}
           initialSlide={1}
           style={{
-            boxShadow: "10px 10px 150px #6e00ff54, inset 0 0 50px #6e00ff54", // fix inner shadow (add a relitive div with showdow bellow the cards)
+            boxShadow: "10px 10px 150px #6e00ff54, inset 0 0 50px #6e00ff54",
           }}
         >
           {projects.map((project) => (
@@ -77,14 +79,15 @@ function ProjectsSection() {
               key={project.id}
             >
               <div className="h-full w-full flex flex-col items-center">
-                <div className="h-4/5 flex items-center">
+                {/* Project Image and Description */}
+                <div className="h-4/5 flex flex-col sm:flex-row items-center">
                   <img
                     src={project.icon}
                     alt={project.title}
-                    className="h-full"
+                    className="h-32 sm:h-full w-auto"
                   />
-                  <div className="flex items-center flex-col">
-                    <div className="m-12 ">{project.desc}</div>
+                  <div className="flex items-center flex-col text-center sm:text-left">
+                    <div className="m-6 sm:m-12">{project.desc}</div>
                     <div>
                       {project.links.site && (
                         <a href={project.links.site}>
@@ -114,7 +117,8 @@ function ProjectsSection() {
                     </div>
                   </div>
                 </div>
-                <div className="h-1/5 bg-[#0000005e] w-full flex  justify-center items-center">
+                {/* Project Title */}
+                <div className="h-1/5 bg-[#0000005e] w-full flex justify-center items-center text-sm sm:text-base">
                   {project.title}
                 </div>
               </div>
