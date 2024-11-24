@@ -41,7 +41,7 @@ function IntroSection() {
 
         {/* Right Section */}
         <div className="lg:w-3/5 lg:mr-20">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 justify-items-start">
+          <div className="grid grid-cols-2 sm:grid-cols-2 gap-4 mb-6 justify-items-start">
             <div className="flex items-center">
               <svg
                 className="h-5 w-5 text-white"
@@ -93,7 +93,7 @@ function IntroSection() {
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
               </svg>
-              <p className="text-white text-sm sm:text-lg ml-4">
+              <p className="text-white text-start text-sm sm:text-lg ml-4">
                 Baltimore, Maryland
               </p>
             </div>
@@ -121,23 +121,27 @@ function IntroSection() {
             </div>
           </div>
           <hr className="mb-6" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <p className="text-white text-sm sm:text-md font-bold">
-              Over one year of professional development experience...
-            </p>
-            <p className="text-white text-sm sm:text-md font-bold">
-              Passionate about learning and growing every day...
-            </p>
-            <p className="text-white text-xs sm:text-sm mt-4">
-              I’ve had the opportunity to work with E-commerce and SaaS-centric
-              companies, delivering fast, efficient, and well-designed code that
-              meets business and customer needs.
-            </p>
-            <p className="text-white text-xs sm:text-sm mt-4">
-              With a solid foundation in both front-end and back-end
-              technologies, I thrive on turning creative concepts into reality
-              in the digital world.
-            </p>
+          <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
+            <div>
+              <p className="text-white text-sm sm:text-md font-bold">
+                Over one year of professional development experience...
+              </p>
+              <p className="text-white text-xs sm:text-sm mt-4">
+                I’ve had the opportunity to work with E-commerce and
+                SaaS-centric companies, delivering fast, efficient, and
+                well-designed code that meets business and customer needs.
+              </p>
+            </div>
+            <div>
+              <p className="text-white text-sm sm:text-md font-bold">
+                Passionate about learning and growing every day...
+              </p>
+              <p className="text-white text-xs sm:text-sm mt-4">
+                With a solid foundation in both front-end and back-end
+                technologies, I thrive on turning creative concepts into reality
+                in the digital world.
+              </p>
+            </div>
           </div>
         </div>
       </div>

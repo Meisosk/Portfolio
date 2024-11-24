@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import { EffectCards } from "swiper/modules";
+import { skills } from "./SkillsSection";
 
 function ProjectsSection() {
   const projects = [
@@ -14,6 +15,15 @@ function ProjectsSection() {
         github: "https://github.com/Meisosk/Homeward-Bound-Bonds",
         walkthrough: "https://watch.screencastify.com/v/bKiOdzfBDjnbqQRO4U4g",
       },
+      skillsUsed: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Node.js",
+        "Sequelize ",
+        "PostgreSQL",
+        "SQL",
+      ],
     },
     {
       title: "EcoQuest",
@@ -26,6 +36,16 @@ function ProjectsSection() {
         walkthrough:
           "https://drive.google.com/file/d/1HTuBP4txU2l04UuWVSCm5e5g8o6z5_SD/view",
       },
+      skillsUsed: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Node.js",
+        "Supabase",
+        "React",
+        "Tailwind",
+        "Vite",
+      ],
     },
     {
       title: "Meir's Meteorology",
@@ -37,6 +57,7 @@ function ProjectsSection() {
         github: "https://github.com/Meisosk/meirs-meteorology",
         walkthrough: "https://watch.screencastify.com/v/oBVQIzJ1tgavahbfjbwj",
       },
+      skillsUsed: ["HTML", "CSS", "JavaScript", "Node.js", "React", "Vite"],
     },
     {
       title: "Music in Moton",
@@ -47,6 +68,7 @@ function ProjectsSection() {
         site: "https://musicinmotion.netlify.app/",
         github: "https://github.com/Meisosk/Music-N-Motion?tab=readme-ov-file",
       },
+      skillsUsed: ["HTML", "CSS", "JavaScript"],
     },
   ];
 
@@ -114,6 +136,29 @@ function ProjectsSection() {
                           </span>
                         </a>
                       )}
+                    </div>
+                    <div className="mb-4">
+                      <div className="flex flex-wrap gap-2 items-center justify-center sm:justify-start mt-2">
+                        {skills
+                          .filter((skill) =>
+                            project.skillsUsed.includes(skill.name)
+                          )
+                          .map((filteredSkill) => (
+                            <div
+                              key={filteredSkill.name}
+                              className="flex items-center gap-2 p-2 rounded-lg"
+                            >
+                              <img
+                                src={filteredSkill.icon}
+                                alt={filteredSkill.name}
+                                className="h-6 w-6"
+                              />
+                              {/* <span className="text-sm text-white">
+                                {filteredSkill.name}
+                              </span> */}
+                            </div>
+                          ))}
+                      </div>
                     </div>
                   </div>
                 </div>
