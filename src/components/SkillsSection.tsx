@@ -1,19 +1,18 @@
+export const skills = [
+  { name: "HTML", icon: "/icons/html-5.png" },
+  { name: "CSS", icon: "/icons/css-3.png" },
+  { name: "JavaScript", icon: "/icons/js.png" },
+  { name: "TypeScript", icon: "/icons/typescript.png" },
+  { name: "SQL", icon: "/icons/sql-file-format-symbol.png" },
+  { name: "git", icon: "/icons/git.png" },
+  { name: "React", icon: "/icons/atom.png" },
+  { name: "Bootstrap", icon: "/icons/bootstrap.png" },
+  { name: "Tailwind", icon: "/icons/tailwind-css.svg" },
+  { name: "MUI", icon: "/icons/muilogo.png" },
+  { name: "Node.js", icon: "/icons/nodejs.png" },
+  { name: "PostgreSQL", icon: "/icons/postgre.png" },
+];
 function SkillsSection() {
-  const skills = [
-    { name: "HTML", icon: "/icons/html-5.png" },
-    { name: "CSS", icon: "/icons/css-3.png" },
-    { name: "JavaScript", icon: "/icons/js.png" },
-    { name: "TypeScript", icon: "/icons/typescript.png" },
-    { name: "SQL", icon: "/icons/sql-file-format-symbol.png" },
-    { name: "git", icon: "/icons/git.png" },
-    { name: "React", icon: "/icons/atom.png" },
-    { name: "Bootstrap", icon: "/icons/bootstrap.png" },
-    { name: "Tailwind", icon: "/icons/tailwind-css.svg" },
-    { name: "MUI", icon: "/icons/muilogo.png" },
-    { name: "Node.js", icon: "/icons/nodejs.png" },
-    { name: "PostgreSQL", icon: "/icons/postgre.png" },
-  ];
-
   return (
     <div className="relative py-8 px-4 sm:py-16 sm:px-8 bg-[#161513] text-white">
       {/* Background Circles */}
