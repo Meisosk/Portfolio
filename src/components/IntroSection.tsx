@@ -15,7 +15,7 @@ function IntroSection() {
               MEIR SOSKIL
             </h1>
             <p className="text-white text-lg sm:text-xl mb-4">
-              Product Designer based in Baltimore
+              Developer based in Baltimore
             </p>
             <a
               href="/MeirSoskil–Resume2025.pdf"
