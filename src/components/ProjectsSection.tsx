@@ -78,6 +78,9 @@ function ProjectsSection() {
         id="projects"
         className="relative flex flex-col items-center justify-center h-screen bg-[#161513] overflow-hidden text-white"
       >
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8">
+          My Projects
+        </h2>
         {/* Gradient Circles */}
         <div className="absolute top-0 left-10 w-20 h-20 sm:left-20 sm:w-36 sm:h-36 bg-gradient-to-r from-purple-500 to-pink-500 opacity-30 rounded-full"></div>
         <div className="absolute top-24 right-2 w-24 h-24 sm:top-40 sm:right-4 sm:w-40 sm:h-40 bg-gradient-to-r from-purple-500 to-pink-500 opacity-30 rounded-full"></div>
@@ -102,69 +105,100 @@ function ProjectsSection() {
             >
               <div className="h-full w-full flex flex-col items-center">
                 {/* Project Image and Description */}
-                <div className="h-4/5 flex flex-col sm:flex-row items-center">
-                  <img
-                    src={project.icon}
-                    alt={project.title}
-                    className="h-32 sm:h-full w-auto"
-                  />
-                  <div className="flex items-center flex-col text-center sm:text-left">
-                    <div className="m-6 sm:m-12">{project.desc}</div>
-                    <div>
-                      {project.links.site && (
-                        <a href={project.links.site}>
-                          <span className="text-blue-400 underline">
-                            Live Site
-                          </span>{" "}
-                          |{" "}
-                        </a>
-                      )}
-                      {project.links.github && (
-                        <a
-                          href={project.links.github}
-                          className="text-blue-400 underline"
-                        >
-                          GitHub
-                        </a>
-                      )}{" "}
-                      {project.links.walkthrough && (
-                        <a href={project.links.walkthrough}>
-                          {" "}
-                          |{" "}
-                          <span className="text-blue-400 underline">
-                            Video Walkthrough
-                          </span>
-                        </a>
-                      )}
-                    </div>
-                    <div className="mb-4">
-                      <div className="flex flex-wrap gap-2 items-center justify-center sm:justify-start mt-2">
-                        {skills
-                          .filter((skill) =>
-                            project.skillsUsed.includes(skill.name)
-                          )
-                          .map((filteredSkill) => (
-                            <div
-                              key={filteredSkill.name}
-                              className="flex items-center gap-2 p-2 rounded-lg"
+                <div className="h-full w-full flex flex-col sm:flex-row items-center">
+                  {/* Image Wrapper */}
+                  <div className="relative lg:h-full h-1/2  w-full sm:w-2/5">
+                    <img
+                      src={project.icon}
+                      alt={project.title}
+                      className="h-full w-full object-cover"
+                    />
+                    <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 flex items-center justify-center py-4">
+                      <span className="text-white text-sm font-medium">
+                        <div className=" flex sm:flex-wrap md:flex-row flex-col gap-3 items-center">
+                          <div>
+                            {project.links.site && (
+                              <a
+                                href={project.links.site}
+                                className="w-full whitespace-nowrap mr-1 lg:mr-[0.75rem] sm:w-auto px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-500 text-white text-center rounded-lg shadow-md hover:from-purple-700 hover:to-pink-600 transition-all duration-500 hover:opacity-90"
+                                target="_blank"
+                              >
+                                Live Site
+                              </a>
+                            )}
+                            {project.links.github && (
+                              <a
+                                href={project.links.github}
+                                className="w-full sm:w-auto px-4 py-2 bg-gray-800 text-white text-center rounded-lg shadow-md hover:bg-gray-900 transition-all duration-300"
+                                target="_blank"
+                              >
+                                GitHub
+                              </a>
+                            )}
+                          </div>
+
+                          {project.links.walkthrough && (
+                            <a
+                              href={project.links.walkthrough}
+                              className="w-full whitespace-nowrap sm:w-auto px-4 py-2 bg-purple-500 text-white text-center rounded-lg shadow-md hover:bg-purple-600 transition-all duration-300"
+                              target="_blank"
                             >
-                              <img
-                                src={filteredSkill.icon}
-                                alt={filteredSkill.name}
-                                className="h-6 w-6"
-                              />
-                              {/* <span className="text-sm text-white">
-                                {filteredSkill.name}
-                              </span> */}
-                            </div>
-                          ))}
-                      </div>
+                              Video Walkthrough
+                            </a>
+                          )}
+                        </div>
+                      </span>
                     </div>
                   </div>
-                </div>
-                {/* Project Title */}
-                <div className="h-1/5 bg-[#0000005e] w-full flex justify-center items-center text-sm sm:text-base">
-                  {project.title}
+
+                  {/* Project Details */}
+                  <div className="flex flex-col text-center sm:text-left w-full sm:w-1/2 p-4">
+                    <div className="mb-8">
+                      <div className="text-[1.5rem] font-semibold mb-4">
+                        {project.title}
+                        <div className="lg:hidden md:hidden  flex flex-wrap gap-2 items-center justify-center">
+                          {skills
+                            .filter((skill) =>
+                              project.skillsUsed.includes(skill.name)
+                            )
+                            .map((filteredSkill) => (
+                              <div
+                                key={filteredSkill.name}
+                                className="flex flex-row justify-center items-center gap-2 p-[.35rem] rounded-lg border border-[rgba(255,255,255,0.2)] text-[#c1c2d3] text-sm"
+                                title={filteredSkill.name} // Add tooltip here
+                              >
+                                <img
+                                  src={filteredSkill.icon}
+                                  alt={filteredSkill.name}
+                                  className="h-5 w-5"
+                                />
+                              </div>
+                            ))}
+                        </div>
+                      </div>
+                      <p className=" text-xs lg:text-lg">{project.desc}</p>
+                    </div>
+
+                    <div className="lg:flex md:flex  hidden flex-wrap gap-2 items-center justify-center">
+                      {skills
+                        .filter((skill) =>
+                          project.skillsUsed.includes(skill.name)
+                        )
+                        .map((filteredSkill) => (
+                          <div
+                            key={filteredSkill.name}
+                            className="flex flex-row justify-center items-center gap-2 p-2 rounded-lg border border-[rgba(255,255,255,0.2)] text-[#c1c2d3] text-sm"
+                          >
+                            <img
+                              src={filteredSkill.icon}
+                              alt={filteredSkill.name}
+                              className="h-5 w-5"
+                            />
+                            <span>{filteredSkill.name}</span>
+                          </div>
+                        ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </SwiperSlide>

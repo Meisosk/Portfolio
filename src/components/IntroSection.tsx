@@ -1,6 +1,6 @@
 function IntroSection() {
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center h-auto lg:h-screen text-center bg-[#161513] relative overflow-hidden px-4 py-8 lg:py-0">
+    <div className="flex flex-col lg:flex-row items-center justify-center h-auto lg:h-2/3 text-center bg-[#161513] relative overflow-hidden px-4 py-8 lg:py-0">
       <div className="flex flex-col lg:flex-row w-full justify-around items-center h-full z-10">
         {/* Left Section */}
         <div className="flex flex-col justify-center items-center  text-center lg:text-left mb-8 lg:mb-0 lg:w-1/3">
@@ -19,7 +19,7 @@ function IntroSection() {
             </p>
             <a
               href="/path/to/resume"
-              className="mt-4 bg-gradient-to-r from-purple-600 to-pink-500 text-white text-base sm:text-lg py-2 px-6 sm:px-9 rounded-lg flex items-center space-x-2"
+              className="mt-4 bg-gradient-to-r from-purple-600 to-pink-500 text-white text-base sm:text-lg py-2 px-6 sm:px-9 rounded-lg flex items-center space-x-2  hover:from-purple-700 hover:to-pink-600 transition-all duration-500 hover:opacity-90"
             >
               <span>Download Resume</span>
               <svg
