@@ -147,7 +147,7 @@ const ContactSection = () => {
             </div>
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-purple-600 to-pink-500 text-white py-2 rounded-md"
+              className="w-full bg-gradient-to-r from-purple-600 to-pink-500 text-white py-2 rounded-md hover:from-purple-700 hover:to-pink-600 transition-all duration-500 hover:opacity-90 "
             >
               Send message
             </button>

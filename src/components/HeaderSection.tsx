@@ -57,7 +57,7 @@ function HeaderSection() {
 
         <div className="flex flex-col sm:flex-row sm:space-x-4 z-10 gap-4 sm:gap-0">
           <a href="#contact">
-            <button className="bg-gradient-to-r from-[#9333ea73] to-[#ec48998f] text-white rounded-lg hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-500 transition-colors mr-6 duration-300 px-8 py-3 w-full sm:w-auto">
+            <button className="bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-lg hover:bg-gradient-to-r  hover:from-purple-700 hover:to-pink-600 transition-all duration-500 hover:opacity-90 mr-6 px-8 py-3 w-full sm:w-auto">
               GET IN TOUCH
             </button>
           </a>
