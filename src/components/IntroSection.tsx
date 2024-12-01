@@ -18,7 +18,8 @@ function IntroSection() {
               Product Designer based in Baltimore
             </p>
             <a
-              href="/path/to/resume"
+              href="/MeirSoskil–Resume2025.pdf"
+              target="_blank"
               className="mt-4 bg-gradient-to-r from-purple-600 to-pink-500 text-white text-base sm:text-lg py-2 px-6 sm:px-9 rounded-lg flex items-center space-x-2  hover:from-purple-700 hover:to-pink-600 transition-all duration-500 hover:opacity-90"
             >
               <span>Download Resume</span>
